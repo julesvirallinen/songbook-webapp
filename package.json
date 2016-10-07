@@ -5,7 +5,7 @@
   "main": "server.js",
   "author": "Julkku",
   "engines": {
-    "node": "4.1.1"
+    "node": "4.6.0"
   },
   "dependencies": {
     "body-parser": "^1.4.3",
