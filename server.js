@@ -90,8 +90,8 @@
 
 
     // listen (start app with node server.js) ======================================
-    app.listen(8080);
-    console.log("App listening on port 8080");
+app.listen(port, '0.0.0.0', function(err) {
+  console.log("Started listening on %s", app.url);
 
 
 
