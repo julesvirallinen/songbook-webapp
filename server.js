@@ -14,7 +14,7 @@
 
     // configuration =================
 
-    var url = 'mongodb://localhost/kanta';
+    var url = 'mongodb://127.0.0.1/kanta';
 
     mongoose.connect(url);
 
@@ -90,5 +90,9 @@
 
 
     // listen (start app with node server.js) ======================================
-app.listen(port, '0.0.0.0', function(err) {
-  console.log("Started listening on %s", app.url)});
+    app.listen(port);
+    console.log("App listening on port 8080");
+
+
+
+
