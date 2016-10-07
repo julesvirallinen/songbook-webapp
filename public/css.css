@@ -3,12 +3,26 @@
     body { 
         padding-top:50px; }
     p {
-    padding: 30px;
-    font-size: 25px;
-    font-weight: bold;
+    padding: 10px;
+    font-size: 15px;
+    /*font-weight: bold;*/
     text-align: center;
-    background: #dbdfe5;
+    background: #ffe0f6;
     }
     #sanat {
         text-align: center;
+    }
+
+    .jumbotron {
+        background: #ffe0f6;
+
+    }
+
+    body {
+        background: #fff7fc;
+    }
+
+    .input-group{
+        margin-bottom: 20px;
+        margin-top: -15px;
     }
