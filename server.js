@@ -91,8 +91,4 @@
 
     // listen (start app with node server.js) ======================================
 app.listen(port, '0.0.0.0', function(err) {
-  console.log("Started listening on %s", app.url);
-
-
-
-
+  console.log("Started listening on %s", app.url)});
