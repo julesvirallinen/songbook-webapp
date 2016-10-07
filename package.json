@@ -1,9 +1,9 @@
 {
-  "name": "node-todo",
+  "name": "asblaulut",
   "version": "0.0.0",
-  "description": "Simple todo application.",
+  "description": "laulukirja laulamista varten.",
   "main": "server.js",
-  "author": "Scotch",
+  "author": "Julkku",
   "dependencies": {
     "body-parser": "^1.4.3",
     "express": "^4.13.4",
@@ -12,3 +12,4 @@
     "morgan": "^1.1.1"
   }
 }
+
