@@ -1,0 +1,14 @@
+    html {
+        overflow-y:scroll; }
+    body { 
+        padding-top:50px; }
+    p {
+    padding: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    background: #dbdfe5;
+    }
+    #sanat {
+        text-align: center;
+    }

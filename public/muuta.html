@@ -1,0 +1,70 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="scotchBiisi">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>Node/Angular biisi App</title>
+
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #biisi-list              { margin-bottom:30px; }
+    </style>
+
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="core.js"></script>
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL biisit -->
+<body ng-controller="mainController">
+    <div class="container">
+
+        <!-- HEADER AND biisi COUNT -->
+        <div class="jumbotron text-center">
+            <h1>Muuta <span class="label label-info">{{ biisit.length }}</span></h1>
+        </div>
+
+        <!-- biisi LIST -->
+        <div id="biisi-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+
+                <!-- LOOP OVER THE biisit IN $scope.biisit -->
+                <div class="checkbox" ng-repeat="biisi in biisit">
+                    <label>
+                        <input type="checkbox" ng-click="deleteBiisi(biisi._id)"> {{ biisi.name }}
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FORM TO CREATE biisit -->
+        <div id="biisi-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+
+                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                        <input type="text" class="form-control input-lg text-center" placeholder="Nimi" ng-model="formData.name">
+                        <textarea  class="form-control" placeholder="Sanat :D" ng-model="formData.sanat"></textarea>
+                    </div>
+
+                    <!-- createbiisi() WILL CREATE NEW biisit -->
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="createBiisi()">Add</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
