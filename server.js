@@ -9,6 +9,9 @@
     var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
     var Biisit = require('./Biisi');
 
+    var port = process.env.PORT || 8080;
+
+
     // configuration =================
 
     var url = 'mongodb://127.0.0.1/kanta';
