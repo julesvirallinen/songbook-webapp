@@ -14,7 +14,7 @@
 
     // configuration =================
 
-    var url = 'mongodb://127.0.0.1/kanta';
+    var url = 'mongodb://localhost/kanta';
 
     mongoose.connect(url);
 
