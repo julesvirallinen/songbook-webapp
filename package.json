@@ -4,6 +4,9 @@
   "description": "laulukirja laulamista varten.",
   "main": "server.js",
   "author": "Julkku",
+  "engines": {
+    "node": "4.1.1"
+  },
   "dependencies": {
     "body-parser": "^1.4.3",
     "express": "^4.13.4",
