@@ -14,7 +14,7 @@
 
     // configuration =================
 
-    var url = 'mongodb://127.0.0.1/kanta';
+    var url = 'mongodb://servu:' + process.env.SALASANA + '@ds053206.mlab.com:53206/asblaulut';
 
     mongoose.connect(url);
 
