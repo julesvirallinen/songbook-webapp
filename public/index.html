@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>Node/Angular biisi App</title><
+    <title>ASB laulukirja</title>
     <!-- load bootstrap -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     
@@ -36,17 +36,17 @@
         <div class="container">
 
             <!--OTSIKKO!-->
-            <div class="jumbotron text-center">
-                <h1>ASP laulut</h1>
+            <div class="container text-center">
+                <h1>ASP LAULUT</h1>
             </div>
         </div>
+        
         <!--FILTER SONGS-->
         <form class="navbar-form" role="search">
-            <div class="input-group">
-                <input autocomplete="off" type="text" ng-model="filtteri" class="form-control" placeholder="Mikä biisi?" name="srch-term"
-                    id="srch-term">
+            <div class="container">
+                <input autocomplete="off" ng-click="filterSongs()" type="text" ng-model="filtteri" class="form-control" placeholder="Mikä biisi?" name="srch-term" id="srch-term">
                 <div class="input-group-btn">
-                    <button ng-click="filterSongs()" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    <!--<button ng-click="filterSongs()" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>-->
                 </div>
             </div>
         </form>
@@ -55,10 +55,9 @@
 
         <!--LYRIIKAT, KUN NÄKYVILLÄ-->
         <div ng-show="lyricsnakyy" class="container">
-            <div id="sanat" ng-repeat="biisi in biisit | filter:{'_id':  lyriikat}:true"><b>{{ biisi.name }}</b>
-                </br>
+            <div ng-click="piilota()" id="sanat" ng-repeat="biisi in biisit | filter:{'_id':  lyriikat}:true"><span class="biisiotsikko">{{ biisi.name }}</span>
                 </br>{{ biisi.sanat }}
-                </br><span ng-click="piilota()"> PIILOTA! </span>
+                <!--</br><span ng-click="piilota()"> PIILOTA! </span>-->
             </div>
         </div>
 
