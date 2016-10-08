@@ -2,7 +2,7 @@
 <!doctype html>
 
 <!-- ASSIGN OUR ANGULAR MODULE -->
-<html ng-app="scotchBiisi">
+<html ng-app="app">
 
 <head>
     <!-- META -->
@@ -42,30 +42,37 @@
         </div>
         
         <!--FILTER SONGS-->
-        <form class="navbar-form" role="search">
-            <div class="container">
+        <form class="container search" role="search">
                 <input autocomplete="off" ng-click="filterSongs()" type="text" ng-model="filtteri" class="form-control" placeholder="Mikä biisi?" name="srch-term" id="srch-term">
-                <div class="input-group-btn">
-                    <!--<button ng-click="filterSongs()" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>-->
-                </div>
-            </div>
         </form>
 
 
 
         <!--LYRIIKAT, KUN NÄKYVILLÄ-->
-        <div ng-show="lyricsnakyy" class="container">
-            <div ng-click="piilota()" id="sanat" ng-repeat="biisi in biisit | filter:{'_id':  lyriikat}:true"><span class="biisiotsikko">{{ biisi.name }}</span>
+        <!--<div ng-show="lyricsnakyy" class="container">
+            <div ng-click="piilota()" id="sanat" ng-repeat="biisi in biisit | filter:{'_id':  lyriikat}:true"><span class="biisiotsikko">{{ biisi.name }}</span><a class="save" ng-click="addToFav(biisi._id)"> (save!) </a>
                 </br>{{ biisi.sanat }}
-                <!--</br><span ng-click="piilota()"> PIILOTA! </span>-->
+                </br><span ng-click="piilota()"> PIILOTA! </span>
             </div>
-        </div>
+        </div>-->
+   
 
         <!-- LAULULISTA -->
         <div class="container">
-            <div class="row">
+           
+            <div ng-show="lyricsnakyy" class="col-sm-4" ng-click="piilota()" id="sanat" ng-repeat="biisi in biisit | filter:{'_id':  lyriikat}:true"><span class="biisiotsikko">{{ biisi.name }}</span>
+                </br>{{ biisi.sanat }}
+                <!--</br><span ng-click="piilota()"> PIILOTA! </span>-->
+            </div>
+        
 
-                <div class="col-sm-4" ng-click="changeView(biisi._id)" ng-repeat="biisi in biisit | filter:filtteri">
+            <div class="row">
+                <!--VIIMEISIN BIISI-->
+                <div class="col-sm-4" ng-click="changeView(biisi._id)" ng-repeat="biisi in biisit | filter:{'_id': viimeisin} ">
+                    <p class="biisi"> {{ biisi.name }} </p>
+                </div>
+                <!--LOPUT-->
+                <div class="col-sm-4" ng-click="changeView(biisi._id)" ng-repeat="biisi in biisit | filter:filtteri | filter:{'_id': '!'+viimeisin} ">
 
                     <p class="biisi"> {{ biisi.name }} </p>
                 </div>

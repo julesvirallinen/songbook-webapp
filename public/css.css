@@ -21,31 +21,33 @@
 
     }
 
-    /*BIISIFILTTERI*/
+    /*BIISIHAKU*/
 
     .form-control {
         background: #fff7fc;        
     }
 
-    .input-group{
-        margin-bottom: 15px;
-        margin-top: -15px;
-    }
+
 
     button {
       z-index: 1000;
       position: relative;
     }
 
+    .search {
+        margin-bottom: 15px;
+    }
+
 
     /*LYRIIKKANÄKYMÄ*/
     #sanat {
-        text-align: justify;
-        padding-left: 10px;
+        text-align: left;
         background: #ffeaf7;
         white-space: pre-line;
         margin-bottom: 20px;
         padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 5px;
         word-wrap: normal;
         line-height: 30px;
     }
@@ -62,6 +64,11 @@
 
     /*BIISILAATIKOT*/
 
+    .saved.biisi {
+        background: #91bbff;
+        
+    }
+
     .biisi {
         padding: 10px;
         font-size: 15px;
@@ -75,4 +82,8 @@
 
     p.biisi:hover {
         background: #ffeaf7;
+    }
+
+    p.saved.biisi:hover {
+        background: #adc9f7;
     }

@@ -1,10 +1,11 @@
-var scotchBiisi = angular.module('scotchBiisi', []);
+var app = angular.module('app', []);
 
 function mainController($scope, $http) {
     $scope.formData = {};
     $scope.lyriikat = "";
     $scope.lyricsnakyy = false;
     $scope.filtteri = "";
+    $scope.viimeisin = "ddd";
     
 
     // when landing on the page, get all biisit and show them
@@ -18,26 +19,25 @@ function mainController($scope, $http) {
             console.log('Error: ' + data);
         });
 
-    // when submitting the add form, send the text to the node API
+   
+   // Laittaa valitun biisin lyriikat näkyville.
     $scope.changeView = function(id){
-        
         $scope.lyriikat = id;
+        $scope.viimeisin = id;
         $scope.lyricsnakyy = true;
-
-
     };
 
+    // Piilottaa lyriikat. 
     $scope.piilota = function() {
         $scope.lyricsnakyy = false;
     }
+    // $scope.addToFav = function(id){
+    //     // $scope.savedSongs.push(id); 
+    //     $scope.savedSongs = id;
+    // }
 
-    $scope.filterSongs = function(){
-
-    }
-
+    // Luo tietokantaan uuden biisin. 
     $scope.createBiisi = function() {
-
-
         $http.post('/api/biisit', $scope.formData)
                .success(function(data) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
@@ -48,8 +48,7 @@ function mainController($scope, $http) {
                 console.log('Error: ' + data);
             });
     };
-
-    // delete a Biisi after checking it
+    // Delete a song
     $scope.deleteBiisi = function(id) {
         $http.delete('/api/biisit/' + id)
             .success(function(data) {
@@ -61,4 +60,4 @@ function mainController($scope, $http) {
             });
     };
 
-}
+};
