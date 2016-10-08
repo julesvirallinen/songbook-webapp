@@ -1,28 +1,58 @@
     html {
         overflow-y:scroll; }
     body { 
-        padding-top:50px; }
-    p {
-    padding: 10px;
-    font-size: 15px;
-    /*font-weight: bold;*/
-    text-align: center;
-    background: #ffe0f6;
-    }
-    #sanat {
-        text-align: center;
-    }
-
-    .jumbotron {
-        background: #ffe0f6;
-
-    }
-
-    body {
+        padding-top:10px;
+        color: #565156;
         background: #fff7fc;
+ }
+    /*OTSIKKOBOKSI*/
+     .jumbotron {
+        background: #ffe0f6;
+        padding: 15px;
+    }
+
+    h1 {
+        font-family: "Lato";
+        font-size: 30px;
+        /*font-style: italic;*/
+        font-weight: bold;
+        color: #565156;
+
+    }
+
+
+
+    /*BIISIFILTTERI*/
+
+    .form-control {
+        background: #fff7fc;        
     }
 
     .input-group{
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         margin-top: -15px;
+    }
+    /*LYRIIKKANÄKYMÄ*/
+    #sanat {
+        text-align: center;
+        background: #ffeaf7;
+        white-space: pre;
+        margin-bottom: 20px;
+        padding-top: 10px;
+    }
+
+    /*BIISILAATIKOT*/
+    .biisi {
+        padding: 10px;
+        font-size: 15px;
+        /*font-weight: bold;*/
+        text-align: center;
+        background: #ffe0f6;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #444444;
+    }
+
+
+    p.biisi:hover {
+        background: #ffeaf7;
     }

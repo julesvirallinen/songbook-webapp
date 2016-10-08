@@ -9,11 +9,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>Node/Angular biisi App</title>
-
-    <!-- SCROLLS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <title>Node/Angular biisi App</title><
     <!-- load bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    
     <link rel="stylesheet" type="text/css" href="css.css">
 
     <!-- SPELLS -->
@@ -22,6 +21,12 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <!-- load angular -->
     <script src="core.js"></script>
+    <!-- GOOGLE FONTS -->
+    <head>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+
+    </head>
+
 
 </head>
 <!-- SET THE CONTROLLER AND GET ALL biisit -->
@@ -29,10 +34,13 @@
 <body ng-controller="mainController">
     <div class="container">
         <div class="container">
+
+            <!--OTSIKKO!-->
             <div class="jumbotron text-center">
-                <h1>ASB laulukirja</h1>
+                <h1>ASP laulut</h1>
             </div>
         </div>
+        <!--FILTER SONGS-->
         <form class="navbar-form" role="search">
             <div class="input-group">
                 <input autocomplete="off" type="text" ng-model="filtteri" class="form-control" placeholder="Mikä biisi?" name="srch-term"
@@ -45,20 +53,22 @@
 
 
 
-
-        <div id="sanat" ng-show="lyricsnakyy" class="container">
-            <pre ng-repeat="biisi in biisit | filter:{'_id':  lyriikat}:true"><b>{{ biisi.name }}</b></br>{{ biisi.sanat }}
+        <!--LYRIIKAT, KUN NÄKYVILLÄ-->
+        <div ng-show="lyricsnakyy" class="container">
+            <div id="sanat" ng-repeat="biisi in biisit | filter:{'_id':  lyriikat}:true"><b>{{ biisi.name }}</b>
+                </br>
+                </br>{{ biisi.sanat }}
                 </br><span ng-click="piilota()"> PIILOTA! </span>
-            </pre>
+            </div>
         </div>
 
-        <!-- biisi LIST -->
+        <!-- LAULULISTA -->
         <div class="container">
             <div class="row">
 
                 <div class="col-sm-4" ng-click="changeView(biisi._id)" ng-repeat="biisi in biisit | filter:filtteri">
 
-                    <p> {{ biisi.name }} </p>
+                    <p class="biisi"> {{ biisi.name }} </p>
                 </div>
             </div>
         </div>
