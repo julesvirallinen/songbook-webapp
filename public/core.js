@@ -1,6 +1,6 @@
 var app = angular.module('app', []);
 
-function mainController($scope, $http) {
+function mainController($scope, $http, $window) {
     $scope.formData = {};
     $scope.lyriikat = "";
     $scope.lyricsnakyy = false;
@@ -25,7 +25,13 @@ function mainController($scope, $http) {
         $scope.lyriikat = id;
         $scope.viimeisin = id;
         $scope.lyricsnakyy = true;
+        $scope.scroll();
     };
+
+     $scope.scroll = function () {
+        $window.scrollTo(0, angular.element(document.getElementById('sanat')).offsetTop);  
+        // $window.scrollTo(0, 0);  
+      };
 
     // Piilottaa lyriikat. 
     $scope.piilota = function() {

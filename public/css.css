@@ -40,17 +40,21 @@
 
     /*LYRIIKKANÄKYMÄ*/
     #sanat {
-        text-align: left;
+        text-align: cente;
         background: #ffeaf7;
         white-space: pre-line;
+        word-wrap: normal;
+
         margin-bottom: 20px;
         padding-top: 10px;
         padding-left: 10px;
         padding-right: 5px;
-        word-wrap: normal;
+
         line-height: 30px;
+        font-family: "Verdana";
+
         border-radius: 8px;
-        font-family: "Verdana"
+
     }
 
     .biisiotsikko {
