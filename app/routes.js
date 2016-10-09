@@ -1,7 +1,16 @@
 
-    module.exports = function (app) {
+module.exports = function (app) {
 
     var Biisit = require('./Biisi');
+    auth = require('http-auth');
+
+
+    var basic = auth.basic({
+        realm: 'SUPER SECRET STUFF'
+        // Moi Github ;D
+    }, function (username, password, callback) {
+        callback(username == 'seksi' && password == 'bile');
+    });
 
 
 
@@ -58,11 +67,15 @@
 
     // application -------------------------------------------------------------
     app.get('/', function (req, res) {
-        res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+        res.sendfile('./public/index.html');
     });
 
-    app.get('/muuta', function (req, res) {
-        res.sendfile('./public/muuta.html'); // load the single view file (angular will handle the page changes on the front-end)
+    var authMW = auth.connect(basic);
+
+    app.get('/muuta', authMW, function (req, res) {
+
+        res.sendfile('./public/muuta.html');
+
     });
 
-    };
+};

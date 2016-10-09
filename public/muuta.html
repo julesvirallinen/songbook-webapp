@@ -22,6 +22,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
     <script src="core.js"></script>
+    <link rel="stylesheet" type="text/css" href="css.css">
 
 </head>
 <!-- SET THE CONTROLLER AND GET ALL biisit -->
@@ -53,10 +54,10 @@
         <!-- Biisilista -->
         </br>
         <div id="jumbotron" class="row">
-            <div class="col-sm-4 col-sm-offset-4">
-
+            <div >
+                <h1> Biisit: -- DelMode: <span ng-click="deleteMode()" > {{ delMode }}</span> </h1>
                 <!-- LOOP OVER THE biisit IN $scope.biisit -->
-                <div  ng-repeat="biisi in biisit">
+                <div class="col-sm-4 biisit>" ng-repeat="biisi in biisit">
                     
                          {{ biisi.name }}  -- <button ng-click="deleteBiisi(biisi._id)"> DEL </button>
                     
