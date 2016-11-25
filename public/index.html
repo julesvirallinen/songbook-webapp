@@ -22,17 +22,16 @@
     <!-- load angular -->
     <script src="core.js"></script>
     <!-- GOOGLE FONTS -->
-    
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 
-    </head>
-
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 
 </head>
 <!-- SET THE CONTROLLER AND GET ALL biisit -->
 
 <body ng-controller="mainController">
     <div class="container">
+
+        <!-- Tää sisältää sillee tasoo otsikon :D -->
         <div class="container">
 
             <!--OTSIKKO!-->
@@ -40,12 +39,11 @@
                 <h1>ASP LAULUT</h1>
             </div>
         </div>
-        
-        <!--FILTER SONGS-->
+
+        <!--HAKUBOKSI-->
         <form class="container search" role="search">
                 <input autocomplete="off" ng-click="filterSongs()" type="text" ng-model="filtteri" class="form-control" placeholder="Mikä biisi?" name="srch-term" id="srch-term">
         </form>
-
 
 
         <!--LYRIIKAT, KUN NÄKYVILLÄ-->
@@ -72,7 +70,7 @@
                     <p class="biisi"> {{ biisi.name }} </p>
                 </div>
                 <!--LOPUT-->
-                <div class="col-sm-4" ng-click="changeView(biisi._id)" ng-repeat="biisi in biisit | filter:filtteri | filter:{'_id': '!'+viimeisin} ">
+                <div class="col-sm-4" ng-click="changeView(biisi._id)" ng-repeat="biisi in biisit | filter:filtteri | filter:{'_id': '!'+viimeisin} | orderBy: 'name'">
 
                     <p class="biisi"> {{ biisi.name }} </p>
                 </div>

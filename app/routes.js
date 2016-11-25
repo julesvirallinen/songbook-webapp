@@ -3,13 +3,12 @@ module.exports = function (app) {
 
     var Biisit = require('./Biisi');
     auth = require('http-auth');
-
-
+    require('dotenv').load(); 
     var basic = auth.basic({
         realm: 'SUPER SECRET STUFF'
-        // Moi Github ;D
+
     }, function (username, password, callback) {
-        callback(username == 'seksi' && password == 'bile');
+        callback(username == process.env.LOGIN && password == process.env.PASS);
     });
 
 

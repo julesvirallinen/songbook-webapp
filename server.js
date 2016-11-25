@@ -8,11 +8,12 @@
     var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
     var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
     var port = process.env.PORT || 8080;
+    require('dotenv').load();
 
 
     // configuration =================
 
-    var url = 'mongodb://servu:nakkivene@ds053206.mlab.com:53206/asblaulut';
+    var url = process.env.MONGODB;
 
     mongoose.connect(url);
 
