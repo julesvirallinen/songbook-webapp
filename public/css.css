@@ -5,6 +5,9 @@
         color: #565156;
         background: #fff7fc;
  }
+
+    
+    
     /*OTSIKKOBOKSI*/
 
     h1 {
@@ -12,7 +15,7 @@
         font-size: 45px;
         /*font-style: italic;*/
         /*font-weight: bold;*/
-        color: #565156;
+        
         padding-bottom: 15px;
 
     }
@@ -37,15 +40,21 @@
 
     /*LYRIIKKANÄKYMÄ*/
     #sanat {
-        text-align: left;
+        text-align: cente;
         background: #ffeaf7;
         white-space: pre-line;
+        word-wrap: normal;
+
         margin-bottom: 20px;
         padding-top: 10px;
         padding-left: 10px;
         padding-right: 5px;
-        word-wrap: normal;
+
         line-height: 30px;
+        font-family: "Verdana";
+
+        border-radius: 8px;
+
     }
 
     .biisiotsikko {
@@ -53,7 +62,7 @@
         font-size: 20px;
         /*font-style: italic;*/
         /*font-weight: bold;*/
-        color: #565156; 
+         
     }
 
 
@@ -62,8 +71,9 @@
 
     .saved.biisi {
         background: #91bbff;
-        
     }
+
+
 
     .biisi {
         padding: 10px;
@@ -72,7 +82,8 @@
         text-align: center;
         background: #ffe0f6;
         font-family: Arial, Helvetica, sans-serif;
-        color: #444444;
+        border-radius: 8px;
+        
     }
 
 
